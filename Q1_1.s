@@ -1,10 +1,10 @@
 # MIPS program to multiply two unsigned 32-bit numbers.
 
-		.data
+	.data
 var1:	.word	654858
 var2:	.word	455466 		# (product = 4572032BA4)
 
-		.text
+	.text
 
 main:
 	lw $t0, var1		# loading number in $t0.
