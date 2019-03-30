@@ -1,19 +1,19 @@
 # MIPS program to divide two unsigned numbers
 
-			.data   
+		.data   
 dividend:	.word	21
 divisor:	.word	15
 quotient:	.word	0
 remainder:	.word	0
 
-			.text
+		.text
 
 main:
 	lw $s0, dividend
 	lw $s1, divisor
-	li $s2, 0					# Remainder.
-	li $t0, 0					# Quotient.
-	li $t1, 0					# Quotient * Divisor.
+	li $s2, 0				# Remainder.
+	li $t0, 0				# Quotient.
+	li $t1, 0				# Quotient * Divisor.
 
 	slt $t2, $s0, $s1			# if Dividend < Divisor.
 	beq $t2, 1, large_divisor
