@@ -1,21 +1,21 @@
 # MIPS program to divide two signed numbers
 
-			.data   
+		.data   
 dividend:	.word	-71
 divisor:	.word	-2
 quotient:	.word	0
 remainder:	.word	0
 
-			.text
+		.text
 
 main:
 	lw $s0, dividend
 	lw $s1, divisor
-	li $s2, 0					# Remainder.
-	li $t0, 0					# Quotient.
-	li $t1, 0					# Quotient * Divisor.
+	li $s2, 0				# Remainder.
+	li $t0, 0				# Quotient.
+	li $t1, 0				# Quotient * Divisor.
 
-	li $t4, 0					# Remember the signs.
+	li $t4, 0				# Remember the signs.
 	li $t5, 0
 	slt $t4, $s0, $t4
 	slt $t5, $s1, $t5			# t4 t5 = 00, 01, 10, 11.
@@ -42,7 +42,7 @@ none_negative:					# If both are positive dont negate.
 	slt $t2, $s0, $s1			# if Dividend < Divisor.
 	beq $t2, 1, large_divisor
 
-for:							# If Divisor < Dividend.
+for:						# If Divisor < Dividend.
 	add $t1, $t1, $s1
 	addi $t0, $t0, 1
 	slt $t2, $t1, $s0
